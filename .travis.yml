@@ -1,0 +1,8 @@
+language: php
+before_script:
+  - mysql -uroot -e "create database hoge"
+  - mysql -uroot -e "use hoge; create table tokyo (id int(11))"
+  - mysql -uroot -e "use hoge; create table saitama (id int(11))"
+  - mysql -uroot -e "use hoge; create table osaka (id int(11))"
+script:
+  - php -f show_tables.php
